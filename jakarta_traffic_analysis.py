@@ -212,18 +212,18 @@ class Sixth:
     print("\n=== Traffic Insights and Recommendations ===\n")
 
     # 1. Three key findings
-    print("🔍 Three Key Findings:")
+    print(" Three Key Findings:")
     print("1. Weekday traffic volume is significantly higher than weekend traffic (≈46% more vehicles).")
     print("2. Morning and evening rush hours show drastically different speed patterns — evening is slower.")
     print("3. Rainy weather correlates with the slowest average speeds, highlighting weather impact on congestion.\n")
 
     # 2. Two data-driven recommendations
-    print("✅ Two Recommendations to Improve Traffic:")
+    print(" Two Recommendations to Improve Traffic:")
     print("1. Implement dynamic signal timing or staggered work hours to reduce evening congestion.")
     print("2. Improve road surface drainage and visibility measures to maintain better flow during rainy conditions.\n")
 
     # 3. One surprising insight
-    print("💡 One Surprising Insight:")
+    print(" One Surprising Insight:")
     print("Despite being a non-working day, some Sundays show unusually high congestion, possibly due to recreational hotspots or weekend events.\n")
 
 class Visualization:
@@ -273,6 +273,8 @@ class Visualization:
       print("- Increase green light duration during peak hours:", peak_hours)
       print("- Reduce cycle times during off-peak hours:", off_peak_hours)
 
+
+print("Data Loading, Cleaning and Preparation")
 #1st class
 df_raw = First.Data_Loading()
 print(df_raw)
@@ -287,25 +289,37 @@ print(null_rows)
 clean_data = First.Data_Cleaning(df_raw)
 print(clean_data)
 
+print("###########################################################################################################")
+print("Traffic Pattern Evaluation")
 #2nd class
 Second(clean_data).peak_hour_analysis()
 Second(clean_data).location_comparison()
 Second(clean_data).weekend_vs_weekday_analysis()
 
+print("###########################################################################################################")
+print("Weather Impact Evaluation")
 #3rd class
 Third(clean_data).analyze_weather_impact()
 
+print("###########################################################################################################")
+print("Road Type Performance Evaluation")
 #4th class
 Fourth(clean_data).analyze_road_performance()
 
+print("###########################################################################################################")
+print("Rush Hour Deep Dive Evaluation")
 #5th class
 Fifth(clean_data).analyze_rush_hours()
 
+print("###########################################################################################################")
+print("Insights and Recommendations")
 #6th class
 Sixth(clean_data).generate_insights()
 
+#print("###########################################################################################################")
+#print("Data Visualization")
 #7th class
-Visualization(clean_data).visualize_traffic_patterns()
-Visualization(clean_data).correlate_weather_and_speed()
-Visualization(clean_data).find_maintenance_windows()
-Visualization(clean_data).optimize_traffic_lights()
+#Visualization(clean_data).visualize_traffic_patterns()
+#Visualization(clean_data).correlate_weather_and_speed()
+#Visualization(clean_data).find_maintenance_windows()
+#Visualization(clean_data).optimize_traffic_lights()
