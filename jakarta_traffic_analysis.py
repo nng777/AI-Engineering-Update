@@ -135,6 +135,9 @@ class Fourth:
       self.df = df
 
   def analyze_road_performance(self):
+      # Clean Road_Type values, since there is a duplication of Main_Road Road_Type
+      self.df['Road_Type'] = self.df['Road_Type'].str.strip().str.lower()
+
       # 1. Group by road type: average vehicle count and speed
       road_stats = self.df.groupby('Road_Type')[['Vehicle_Count', 'Average_Speed_kmh']].mean()
 
@@ -285,7 +288,6 @@ null_rows = df_raw[
     df_raw[['Vehicle_Count', 'Average_Speed_kmh', 'Weather_Condition', 'Is_Weekend']].isnull().any(axis=1)
 ]
 print(null_rows)
-
 clean_data = First.Data_Cleaning(df_raw)
 print(clean_data)
 
